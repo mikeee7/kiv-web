@@ -16,8 +16,9 @@
 <body>
     <h1>Registrační formulář</h1>
 
-    <form action="http://students.kiv.zcu.cz/~nyklm/+studenti-kiv-web/formular-zobrazeni.php" method="GET"
-          target="_blank" accept-charset="UTF-8" autocomplete="on"
+    <form action="http://students.kiv.zcu.cz/~nyklm/+studenti-kiv-web/formular-zobrazeni.php" method="POST"
+          target="_blank" accept-charset="UTF-8" autocomplete="on" enctype="multipart/form-data"
+          id="muj_formular"
     >
         <!-- Osobni udaje uzivatele -->
         <fieldset>
@@ -26,17 +27,17 @@
 
             <label for="lb_login">
                 Login<sup>*</sup>:
-                <!-- doplnit -->
+                <input type="text" name="login" required>
             </label><br><br>
 
             <label for="lb_mail">
                 E-mail<sup>*</sup>:
-                <!-- doplnit -->
+                <input type="email" name="mail" required>
             </label><br><br>
 
             <label for="lb_heslo">
                 Heslo<sup>*</sup>:
-                <!-- doplnit -->
+                <input type="password" name="heslo" required>
             </label><br><br>
 
             <div class="is-required">
@@ -47,11 +48,11 @@
             <div>
                 Pohlaví:
                 <label for="lb_muz">
-                    <!-- doplnit -->
+                    <input id="lb_muz" type="radio" name="pohlavi" value="muz">
                     Muž
                 </label>
                 <label for="lb_zena">
-                    <!-- doplnit -->
+                    <input id="lb_zena" type="radio" name="pohlavi" value="zena">
                     Žena
                 </label>
             </div>
@@ -59,29 +60,29 @@
 
             <label for="lb_narozeni">
                 Datum narození:
-                <!-- doplnit -->
+                <input type="date" name="narozeni">
             </label><br><br>
 
             <label for="lb_barva">
                 Oblíbená barva:
-                <!-- doplnit -->
+                <input type="color" name="barva">
             </label><br><br>
 
             <label for="lb_soubor">
                 Nahrát fotografie:
-                <!-- doplnit -->
+                <input type="file" name="foto" accept="image/*" >
             </label><br><br>
 
             <label for="lb_vyska">
                 Výška v cm:
-                <!-- doplnit -->
+                <input type="number" name="vyska" min="50" max="250" value="170">
             </label><br><br>
 
             <label for="lb_deti">
                 Počet dětí:
-                <!-- doplnit -->
+                <input id="lb_deti" type="range" name="deti" min="0" max="10" value="0" step="1" oninput="abc.value = parseInt(this.value)">
                 =
-                <!-- doplnit -->
+                <output name="abc" for="deti" ></output>
             </label><br><br>
 
         </fieldset>
@@ -148,7 +149,8 @@
 
         <!-- Tlacitka formulare -->
 
-        <!-- doplnit -->
+        <input type="submit" name="odeslat" value="Odeslat">
+        <input type="reset" value="Resetovat">
 
         <!-- KONEC: Tlacitka formulare -->
 
