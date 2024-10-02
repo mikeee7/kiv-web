@@ -27,17 +27,17 @@
 
             <label for="lb_login">
                 Login<sup>*</sup>:
-                <input type="text" name="login" required>
+                <input type="text" name="login" required autofocus tabindex="1" placeholder="např. jannovak">
             </label><br><br>
 
             <label for="lb_mail">
                 E-mail<sup>*</sup>:
-                <input type="email" name="mail" required>
+                <input type="email" name="mail" required tabindex="2" placeholder="např. jan.novak@seznam.cz">
             </label><br><br>
 
             <label for="lb_heslo">
                 Heslo<sup>*</sup>:
-                <input type="password" name="heslo" required>
+                <input type="password" name="heslo" required tabindex="3">
             </label><br><br>
 
             <div class="is-required">
@@ -75,14 +75,14 @@
 
             <label for="lb_vyska">
                 Výška v cm:
-                <input type="number" name="vyska" min="50" max="250" value="170">
+                <input type="number" name="vyska" min="50" max="250" step="10" value="170">
             </label><br><br>
 
             <label for="lb_deti">
                 Počet dětí:
                 <input id="lb_deti" type="range" name="deti" min="0" max="10" value="0" step="1" oninput="abc.value = parseInt(this.value)">
                 =
-                <output name="abc" for="deti" ></output>
+                <output name="abc" for="deti">0</output>
             </label><br><br>
 
         </fieldset>
@@ -96,12 +96,27 @@
 
             <label for="lb_auto">
                 Typ automobilu:
-                <!-- doplnit -->
+                <select name="auto" >
+                    <optgroup label="Švédská">
+                        <option value="1">Volvo</option>
+                        <option value="2">Saab</option>
+                    </optgroup>
+                    <optgroup label="Německá">
+                        <option value="1" selected>Mercedes</option>
+                        <option value="2">Audi</option>
+                    </optgroup>
+                </select>
             </label><br><br>
 
             <label for="lb_zvire">
                 Domácí zvíře (s CTRL zvolte více položek):<br>
-                <!-- doplnit -->
+                <select name="zvire" multiple>
+                    <option value="1" selected>Pes</option>
+                    <option value="2">Kočka</option>
+                    <option value="3">Tygr</option>
+                    <option value="4" selected>Papoušek</option>
+                    <option value="5" hidden>Pavouk</option>
+                </select>
             </label><br><br>
 
         </fieldset>
@@ -130,17 +145,17 @@
 
             <label for="lb_stanice">
                 Nejoblíbenější stanice:<br>
-                <!-- doplnit -->
+                <input list="stanice-data" name="stanice" placeholder="Stanice">
             </label><br><br>
 
             <label for="lb_stanice_2">
                 2. nejoblíbenější stanice:<br>
-                <!-- doplnit -->
+                <input list="stanice-data" name="stanice_2" placeholder="Stanice 2">
             </label><br><br>
 
             <label for="lb_o_me">
                 Dodatečné informace:<br>
-                <!-- doplnit -->
+                <textarea name="ome" rows="4" cols="30" placeholder="Něco o mně..."></textarea>
             </label><br><br>
 
         </fieldset>
@@ -150,7 +165,8 @@
         <!-- Tlacitka formulare -->
 
         <input type="submit" name="odeslat" value="Odeslat">
-        <input type="reset" value="Resetovat">
+        <button type="reset"><b>Reset</b>ovat</button>
+        <button type="button" onclick="alert('Hello World')">Ahoj</button>
 
         <!-- KONEC: Tlacitka formulare -->
 

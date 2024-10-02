@@ -1,0 +1,57 @@
+body {
+    background-image: linear-gradient(red, orange, yellow, green, blue, brown);
+}
+
+#obal {
+    width: 600px;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+header {
+    font-size: xx-large;
+    text-align: center;
+    color: darkred;
+    padding: 10px 0px;
+}
+
+nav {
+    border-bottom: 2px dotted brown;
+    padding: 15px;
+}
+
+nav a {
+    margin: 3px;
+    padding: 5px 20px;
+    border: 1px solid blue;
+    background-color: lightblue;
+    font-family: sans-serif;
+    font-weight: bolder;
+    transition: background-color 1s, color 8s;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
+
+.alert-error, .alert-warning {
+    border: 2px solid;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.alert-error {
+    color: darkred;
+    border-color: darkred;
+}
+
+.alert-warning {
+    color: black;
+    border-color: gold;
+}
+
+/* TODO: h1 -> ...*/
