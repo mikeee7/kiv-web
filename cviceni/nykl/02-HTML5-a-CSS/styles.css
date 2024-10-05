@@ -54,4 +54,106 @@ nav a:hover {
     border-color: gold;
 }
 
-/* TODO: h1 -> ...*/
+h1 {
+    text-align: center;
+}
+
+#novinky {
+    width: 110px;
+    margin: 0 10px;
+    padding: 0 10px;
+    border: 2px solid darkgreen;
+    border-radius: 20px;
+    float: right;
+}
+
+article {
+    margin: 20px;
+    width: 420px;
+    text-align: justify;
+    column-count: 2;
+}
+
+article p:first-child:first-letter {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+p:hover {
+    background-color: black;
+    color: white;
+}
+
+p:hover a {
+    color: gold;
+}
+
+p:hover a:hover {
+    color: greenyellow;
+}
+
+table {
+    width: 100%;
+    tr:first-child {background-color: orange;}
+    tr:nth-child(even) {background-color: antiquewhite;}
+    tr:nth-child(odd) {background-color: burlywood;}
+    tr:not(:first-child):hover {background-color: lightblue;}
+}
+
+article [title] {
+    text-decoration: underline dotted gray;
+}
+
+article a[href^="https"]::before {
+    color: red;
+    content: "★";
+}
+
+article a[href*=".cz"]::after {
+    content: "✦";
+    color: yellow;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+footer span.info {
+    display: block;
+    visibility: hidden;
+}
+
+footer:hover span.info {
+    visibility: visible;
+}
+
+#napoveda {
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 50px;
+    background-color: lightpink;
+    color: hotpink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#novinky span:nth-child(3n+1) {
+    background-color: yellow;
+}
+
+#novinky span:nth-child(3n+2) {
+    background-color: greenyellow;
+}
+
+#novinky span:nth-child(3n) {
+    background-color: lightsalmon;
+}
+
+input[type="text"]:not(:placeholder-shown) {
+    background-color: darkgreen;
+    color: white;
+}
