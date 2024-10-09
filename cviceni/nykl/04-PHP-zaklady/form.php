@@ -7,6 +7,11 @@
     <head>
         <meta charset="utf-8">
         <title>Formulář s ukázkou PHP</title>
+        <?php
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+        ?>
     </head>
     <body>
         <h1>Formulář s ukázkou PHP</h1>
