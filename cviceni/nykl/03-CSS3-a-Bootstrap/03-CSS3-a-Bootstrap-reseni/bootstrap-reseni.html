@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- nastaveni viewportu je zakladem pro responzivni design i Boostrap -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Ukázka Bootstrapu</title>
+
+
+        <!-- CSS Bootstrapu (JS v paticce) -->
+        <!--
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        -->
+
+        <!-- Font Awesome -->
+        <!--
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        -->
+
+
+        <!-- lokalni alternativa -->
+        <link rel="stylesheet" href="composer-ukazka/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="composer-ukazka/vendor/components/font-awesome/css/font-awesome.min.css">
+
+
+        <!-- doplneni pro carousel -->
+        <style>
+            /* Make the image fully responsive */
+            .carousel-inner img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+
+    <!-- Hlavicka -->
+    <header class="container">
+        <h1>První stránka s Bootstrapem</h1>
+        <p class="text-success font-weight-bold">Ukázka použití základních tříd pro menu, tlačítka, tabulky apod.</p>
+    </header>
+    <!-- KONEC: Hlavicka -->
+
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-star"></i>
+                Ukázka Bootstrapu
+            </a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Úvod</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Projekty
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Projekt A</a>
+                            <a class="dropdown-item" href="#">Projekt B</a>
+                            <a class="dropdown-item" href="#">Projekt C</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <!-- KONEC: Menu -->
+
+    <!-- Obsah stranky -->
+    <div class="container">
+        <!-- Uvodni text -->
+        <div class="jumbotron">
+            <h2>Tutoriál</h2>
+            <p class="text-justify">
+                Aenean placerat. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Fusce aliquam vestibulum ipsum.
+            </p>
+            <div class="btn-group btn-group-lg">
+                <a href="#" class="btn btn-primary">
+                    <span class="fa fa-external-link"></span>
+                    Zjistit více
+                </a>
+                <a href="#" class="btn btn-outline-primary">
+                    <span class="fa fa-search"></span>
+                    Hledat
+                </a>
+            </div>
+        </div>
+        <!-- KONEC: Uvodni text -->
+
+        <!-- Clanek -->
+        <article class="container">
+            <!-- 1. cast -->
+            <div class="row">
+                <div class="col-12 text-justify">
+                    <h1>The City</h1>
+                    <p>Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Nulla non lectus sed nisl molestie malesuada. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Duis risus. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Integer pellentesque quam vel velit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Quisque porta. In rutrum. Aenean fermentum risus id tortor. Aliquam erat volutpat. Aenean fermentum risus id tortor.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam quis quam. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Curabitur sagittis hendrerit ante. Proin mattis lacinia justo. Integer pellentesque quam vel velit. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Maecenas sollicitudin. Fusce nibh. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Fusce suscipit libero eget elit. Integer in sapien. Curabitur vitae diam non enim vestibulum interdum. Mauris elementum mauris vitae tortor.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-striped table-hover">
+                            <thead class="thead-dark text-center">
+                                <tr>
+                                    <th>Doslkaue</th><th>Ysileio</th><th>Zkduio</th><th>XDF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="position-relative">
+                                    <td>Dkliseed</td><td>45 689</td><td>568 897</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-primary stretched-link">info</a>
+                                    </td>
+                                </tr>
+                                <tr class="position-relative">
+                                    <td>Kliools</td><td>48 888</td><td>15 896</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-primary stretched-link">info</a>
+                                    </td>
+                                </tr>
+                                <tr class="position-relative">
+                                    <td>Desliolk</td><td>6 457</td><td>4 897</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-primary stretched-link">info</a>
+                                    </td>
+                                </tr>
+                                <tr class="position-relative">
+                                    <td>Hkolliee</td><td>89 982</td><td>1 568 988</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-primary stretched-link">info</a>
+                                    </td>
+                                </tr>
+                                <tr class="table-danger position-relative">
+                                    <td>Iolwioll</td><td>89 568</td><td>865 899</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-primary stretched-link">info</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- KONEC: 1. cast -->
+
+            <!-- 2. cast -->
+            <div class="row">
+                <div class="col-12">
+                    <h2>
+                        Podrobnosti
+                        <sup class="badge badge-success badge-pill">
+                            <span class="spinner-grow text-light"></span>
+                            NEW
+                        </sup>
+                    </h2>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    Nullam at arcu a est sollicitudin euismod.
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-4">
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-4">
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    Nam sed tellus id magna elementum tincidunt.
+                </div>
+            </div>
+            <br>
+            <!-- KONEC: 2. cast -->
+
+            <!-- 3. cast -->
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#demo">Ukaž víc</button>
+                </div>
+                <div id="demo" class="col-12 collapse text-justify text-light font-italic bg-dark rounded">
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. In rutrum. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim. Nulla non arcu lacinia neque faucibus fringilla. Fusce aliquam vestibulum ipsum. Integer pellentesque quam vel velit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante.
+                </div>
+            </div>
+            <br>
+            <!-- KONEC: 3. cast -->
+
+            <!-- Carousel -->
+            <div>
+                <h2>Fotografie</h2>
+                <div id="my-carousel" class="carousel slide" data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#my-carousel" data-slide-to="1"></li>
+                        <li data-target="#my-carousel" data-slide-to="2"></li>
+                    </ul>
+
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="Los Angeles" width="1100" height="500">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.w3schools.com/bootstrap4/chicago.jpg" alt="Chicago" width="1100" height="500">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York" width="1100" height="500">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#my-carousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#my-carousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- KONEC: Carousel -->
+
+        </article>
+        <!-- KONEC: Clanek -->
+
+    </div>
+    <br>
+    <!-- KONEC: Obsah stranky -->
+
+    <!-- Paticka -->
+    <footer class="container-fluid bg-dark text-white text-center font-weight-bold">
+        (c) 2019
+        <span class="fa fa-cog fa-spin"></span>
+    </footer>
+    <!-- KONEC: Paticka -->
+
+
+
+    <!-- ------------- JavaScripty ------------- -->
+
+    <!-- JS, Popper.js, and jQuery -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    -->
+
+    <!-- lokalni alternativa -->
+    <script src="composer-ukazka/vendor/components/jquery/jquery.min.js"></script>
+    <script src="composer-ukazka/vendor/alexandermatveev/popper-bundle/AlexanderMatveev/PopperBundle/Resources/public/popper.min.js"></script>
+    <script src="composer-ukazka/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <!-- ------------- KONEC: JavaScripty ------------- -->
+    </body>
+</html>

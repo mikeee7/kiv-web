@@ -26,23 +26,48 @@
     <body>
 
     <!-- Hlavicka -->
-    <header class="">
+    <header class="container">
         <h1>První stránka s Bootstrapem</h1>
-        <p class="">Ukázka použití základních tříd pro menu, tlačítka, tabulky apod.</p>
+        <p class="text-success">Ukázka použití základních tříd pro menu, tlačítka, tabulky apod.</p>
     </header>
     <!-- KONEC: Hlavicka -->
 
     <!-- Menu -->
-    <!-- doplnte menu -->
+    <nav class="container navbar navbar-expand-sm bg-light sticky-top">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-star"></i>
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Dropdown link
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
     <br>
     <!-- KONEC: Menu -->
 
     <!-- Obsah stranky -->
-    <div class="">
+    <div class="container">
         <!-- Uvodni text -->
-        <div class="">
+        <div class="jumbotron">
             <h2>Tutoriál</h2>
-            <p class="">
+            <p class="text-justify">
                 Aenean placerat. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Fusce aliquam vestibulum ipsum.
             </p>
             <div class="">
