@@ -1,23 +1,18 @@
 <?php
-    require_once('funkce.php');
-
+    // pripojeni souboru s funkcemi
+    require_once("funkce-reseni.php");
 ?>
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Formulář s ukázkou PHP</title>
-        <?php
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
-        ?>
     </head>
     <body>
         <h1>Formulář s ukázkou PHP</h1>
 
         <!-- pri odesilani souboru musi byt doplnen atribut enctype="multipart/form-data" -->
-        <form autocomplete="off">
+        <form action="vystup-reseni.php" method="post" target="_blank" autocomplete="off" enctype="multipart/form-data">
             <fieldset>
                 <legend>Registrační formulář</legend>
                 <br>
@@ -62,8 +57,8 @@
                 <br>
                 <select name="zvire[]" size="5" id="zv" multiple>
                     <?php
-                        // doplnte funkci, ktera jako volby nacte zvirata ze souboru zvirata.txt
-
+                    // doplnte funkci, ktera jako volby nacte zvirata ze souboru zvirata.txt
+                    echo nactiVolby();   // načte volby do SELECT
                     ?>
                 </select>
                 <br><br>
