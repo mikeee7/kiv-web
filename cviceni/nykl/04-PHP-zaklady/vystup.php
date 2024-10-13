@@ -1,5 +1,5 @@
 <?php
-    // pripojeni souboru s funkcemi
+    require_once("funkce.php");
 
 ?>
 <!doctype html>

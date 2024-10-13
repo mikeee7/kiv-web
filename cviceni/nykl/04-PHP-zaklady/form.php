@@ -17,7 +17,7 @@
         <h1>Formulář s ukázkou PHP</h1>
 
         <!-- pri odesilani souboru musi byt doplnen atribut enctype="multipart/form-data" -->
-        <form autocomplete="off">
+        <form action="vystup.php" method="post" target="_blank" enctype="multipart/form-data" autocomplete="off">
             <fieldset>
                 <legend>Registrační formulář</legend>
                 <br>
@@ -62,8 +62,7 @@
                 <br>
                 <select name="zvire[]" size="5" id="zv" multiple>
                     <?php
-                        // doplnte funkci, ktera jako volby nacte zvirata ze souboru zvirata.txt
-
+                        echo nactiZvirata();
                     ?>
                 </select>
                 <br><br>

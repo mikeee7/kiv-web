@@ -28,7 +28,7 @@ echo "Soubor s funkcemi nacten!<br>";
 //$gama();
 
 
-function loadOptions() {
+function nactiZvirata() {
     $soubor = "zvirata.txt";
     $vystup = '';
     $zvirata = [];
@@ -48,3 +48,30 @@ function loadOptions() {
     return $vystup;
 }
 
+function vypisPole($pole) {
+    if (count($pole) == 0) {
+        echo "prázdné pole";
+        return "";
+    }
+
+    $htmlTabulka = vytvorTabulku($pole);
+
+    ulozDoSouboru($htmlTabulka);
+
+    vypisPozdrav($pole);
+
+    prijmiSoubory($pole);
+
+    return $htmlTabulka;
+}
+
+function vytvorTabulku($pole) {
+    $textTabulky = "<table border><tr><th>key</th><th>value</th></tr>";
+
+    foreach($pole as $key => $value){
+        $textTabulky .= "<tr>
+                            <td>".$key."</td>
+                            <td>".((is_array($value)</td>
+                         </tr>";
+    }
+}
