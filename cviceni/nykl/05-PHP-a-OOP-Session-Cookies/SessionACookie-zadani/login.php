@@ -1,7 +1,18 @@
 <?php
     // nacteni souboru s funkcemi loginu (prace se session)
+    require_once("MyLogin.class.php");
+    $mylogin = new MyLogin();
+
+    if(!empty($_POST['action'])){
+        if($_POST['action'] == 'login' && !empty($_POST["jmeno"])){
+            $mylogin->login($_POST["jmeno"]);
+        }
+        elseif ($_POST['action'] == 'logout'){
+        }
+    }
 
     // zpracovani odeslanych formularu
+
 
 ?>
 <!doctype html>
@@ -14,7 +25,7 @@
         <h1>Úvodní stránka</h1>
 <?php
    ///////////// PRO NEPRIHLASENE UZIVATELE ///////////////        
-
+    if ($mylogin->isUserLogged()){
 ?>
         <form method="POST">
             <fieldset>
@@ -28,7 +39,7 @@
 
 <?php
    ///////////// KONEC: PRO NEPRIHLASENE UZIVATELE ///////////////
-        
+    } else {
    ///////////// PRO PRIHLASENE UZIVATELE ///////////////                
 ?>
         <b>Přihlášený uživatel</b><br>
@@ -49,7 +60,7 @@
         </form>
 
 <?php
-
+    }
    ///////////// KONEC: PRO PRIHLASENE UZIVATELE ///////////////
 ?>
     

@@ -11,8 +11,8 @@ echo "<hr>Vykreslitelné tvary:<br>";
 
 /** @var IDrawable[] $shapes  Pole vykreslitelnych tvaru. */
 $shapes = [];
-//$shapes[] = new CPoint("Bod",5,4);
-//$shapes[] = new CLine("Čára",5,4, 10, 0.5);
+$shapes[] = new CPoint("Bod",5,4);
+$shapes[] = new CLine("Čára",5,4, 10, 0.5);
 //$shapes[] = new CCircle("Kruh",6,5, 15);
 //$shapes[] = new CSquare("Čtverec",6,5, "blue", 10);
 //$shapes[] = new CRectangle("Obdélník",6,5, "blue", 10, 5);

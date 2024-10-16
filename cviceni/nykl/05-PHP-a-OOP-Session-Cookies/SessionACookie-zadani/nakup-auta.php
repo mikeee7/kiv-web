@@ -1,6 +1,7 @@
 <?php
     // nacteni souboru s funkcemi loginu (prace se session)
-
+    require_once("MyLogin.class.php");
+    $mylogin = new MyLogin();
     // nacteni souboru pro praci s cookie
 
     // zpracovani odeslanych formularu
@@ -15,6 +16,7 @@
     <body>
         <h1>Nákup automobilu</h1>
 <?php
+    if ($mylogin->isUserLogged()){
    ///////////// PRO NEPRIHLASENE UZIVATELE ///////////////        
 ?>
         Na tuto stránku mají přístup pouze přihlášení uživatelé.<br>
@@ -22,7 +24,7 @@
         
 <?php
    ///////////// KONEC: PRO NEPRIHLASENE UZIVATELE ///////////////
-        
+    } else {
    ///////////// PRO PRIHLASENE UZIVATELE ///////////////                
 ?>
         <b>Přihlášený uživatel</b><br>
@@ -77,6 +79,7 @@
         Vybraný automobil:<br>
         
 <?php
+    }
    ///////////// KONEC: PRO PRIHLASENE UZIVATELE ///////////////                
 ?>
     
