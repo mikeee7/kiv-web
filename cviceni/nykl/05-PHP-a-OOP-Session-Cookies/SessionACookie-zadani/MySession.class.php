@@ -1,7 +1,7 @@
 <?php
 
 class MySession {
-    private $singleton;
+    private static $singleton;
 
     private function __construct()
     {

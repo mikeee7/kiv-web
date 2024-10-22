@@ -14,11 +14,12 @@ class MyLogin {
     }
 
     public function login(string $username){
+        date_default_timezone_set('Europe/Prague');
         $data = [
         self::KEY_NAME => $username,
-        self::KEY_DATE => new DateTime()
+        self::KEY_DATE => date('d.m.Y, H:i:s')
         ];
-        $this->ses->removeSession(self::SESSION_KEY);
+        $this->ses->setSession(self::SESSION_KEY, $data);
     }
 
     public function isUserLogged()
@@ -30,8 +31,13 @@ class MyLogin {
         if ($this->isUserLogged()){
 
             $data = $this->ses->getSession(self::SESSION_KEY);
-            return "Uživatel: ". $data[self::KEY_NAME] ."<br>Datum: ". $data[self::KEY_DATE]->format('d.m.Y G:M:s');
+            return "Uživatel: ". $data[self::KEY_NAME] ."<br>Datum: ". $data[self::KEY_DATE];
         }
         return "Není přihlášen!";
+    }
+
+    public function logout()
+    {
+        $this->ses->removeSession(self::SESSION_KEY);
     }
 }

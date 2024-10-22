@@ -8,6 +8,7 @@
             $mylogin->login($_POST["jmeno"]);
         }
         elseif ($_POST['action'] == 'logout'){
+            $mylogin->logout();
         }
     }
 
@@ -25,7 +26,7 @@
         <h1>Úvodní stránka</h1>
 <?php
    ///////////// PRO NEPRIHLASENE UZIVATELE ///////////////        
-    if ($mylogin->isUserLogged()){
+    if (!$mylogin->isUserLogged()){
 ?>
         <form method="POST">
             <fieldset>
@@ -43,8 +44,7 @@
    ///////////// PRO PRIHLASENE UZIVATELE ///////////////                
 ?>
         <b>Přihlášený uživatel</b><br>
-        Jméno: <br>
-        Datum: <br>
+        <?= $mylogin->getUserInfo() ?>
         <br>
         
         Menu: <a href="nakup-auta.php">Nákup auta</a><br>
