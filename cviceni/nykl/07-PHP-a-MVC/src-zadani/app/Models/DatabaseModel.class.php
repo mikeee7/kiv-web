@@ -1,11 +1,13 @@
 <?php
 
+namespace kivweb\Models;
+
 /**
  * Trida spravujici databazi.
  */
 class DatabaseModel {
 
-    /** @var PDO $pdo  Objekt pracujici s databazi prostrednictvim PDO. */
+    /** @var \PDO $pdo  Objekt pracujici s databazi prostrednictvim PDO. */
     private $pdo;
 
     /**
@@ -13,9 +15,9 @@ class DatabaseModel {
      */
     public function __construct() {
         // inicializace DB
-        $this->pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASS);
-        // vynuceni kodovani UTF-8
-        $this->pdo->exec("set names utf8");
+//        $this->pdo = new \PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASS);
+//        // vynuceni kodovani UTF-8
+//        $this->pdo->exec("set names utf8");
     }
 
     /**
@@ -23,7 +25,8 @@ class DatabaseModel {
      *  @return array Obsah uvodu.
      */
     public function getAllIntroductions():array {
-        // TODO - provedeni dotazu
+
+
     }
     
     
@@ -32,7 +35,7 @@ class DatabaseModel {
      *  @return array Obsah spravy uzivatelu.
      */
     public function getAllUsers():array {
-        // TODO - provedeni dotazu
+
     }
     
     /**

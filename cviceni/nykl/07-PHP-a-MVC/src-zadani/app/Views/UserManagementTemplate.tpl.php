@@ -43,5 +43,8 @@ const WEB_PAGES = array(
 //</form>
 
 // TODO - doplneni sablony
+echo "<h2>$tplData[title]</h2>";
+
+var_dump($tplData['users']);
 
 ?>

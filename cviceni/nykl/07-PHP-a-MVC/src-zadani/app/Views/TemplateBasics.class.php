@@ -1,9 +1,30 @@
 <?php
 
+namespace kivweb\Views;
+
 /**
  * Trida vypisujici HTML hlavicku a paticku stranky.
  */
-class TemplateBasics {
+class TemplateBasics implements IView {
+
+    public const PAGE_INTRODUCTION = "IntroductionTemplate.tpl.php";
+
+    public const PAGE_USER_MANAGEMENT = "UserManagementTemplate.tpl.php";
+
+    public function printOutput(array $templateData, string $pageType): string
+    {
+        ob_start();
+
+        $this->getHTMLHeader($templateData['title']);
+
+        global $tplData;
+        $tplData = $templateData;
+        require_once($pageType);
+
+        $this->getHTMLFooter();
+        return ob_get_clean();
+    }
+
 
     /**
      *  Vrati vrsek stranky az po oblast, ve ktere se vypisuje obsah stranky.
@@ -29,7 +50,9 @@ class TemplateBasics {
 
                 <nav>
                     <?php
-                        // TODO - vypis menu
+                        foreach (WEB_PAGES as $key => $value) {
+                            echo "<a href='?page=$key'> $value[title] </a>";
+                        }
 
                     ?>
                 </nav>

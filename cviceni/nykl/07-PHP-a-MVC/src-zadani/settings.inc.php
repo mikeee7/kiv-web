@@ -26,11 +26,11 @@ define("TABLE_USER", "");
 //// Dostupne stranky webu ////
 
 /** Adresar kontroleru. */
-const DIRECTORY_CONTROLLERS = "app\Controllers";
+const DIRECTORY_CONTROLLERS = "app/Controllers";
 /** Adresar modelu. */
-const DIRECTORY_MODELS = "app\Models";
+const DIRECTORY_MODELS = "app/Models";
 /** Adresar sablon */
-const DIRECTORY_VIEWS = "app\Views";
+const DIRECTORY_VIEWS = "app/Views";
 
 /** Klic defaultni webove stranky. */
 const DEFAULT_WEB_PAGE_KEY = "uvod";
@@ -42,8 +42,9 @@ const WEB_PAGES = array(
         "title" => "Úvodní stránka",
 
         //// kontroler
-        "file_name" => "IntroductionController.class.php",
-        "class_name" => "IntroductionController",
+        "controller_class_name" => \kivweb\Controllers\IntroductionController::class,
+        "view_class_name" => \kivweb\Views\TemplateBasics::class,
+        "page_type" => \kivweb\Views\TemplateBasics::PAGE_INTRODUCTION
     ),
     //// KONEC: Uvodni stranka ////
 

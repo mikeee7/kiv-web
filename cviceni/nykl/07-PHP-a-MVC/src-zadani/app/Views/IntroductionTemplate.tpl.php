@@ -10,19 +10,19 @@
 ////// Po zakomponovani do zbytku aplikace bude tato cast odstranena/zakomentovana  //////
 //// UKAZKA: Uvod bude vypisovat informace z tabulky, ktera ma nasledujici sloupce:
 // id, date, author, title, text
-$tplData['title'] = "Úvodní stránka (TPL)";
-$tplData['stories'] = [
-    array("id_introduction" => 1, "date" => "2016-11-01 10:53:00", "author" => "A.B.", "title" => "Nadpis", "text" => "abcd")
-];
-define("DIRECTORY_VIEWS", "../Views");
-const WEB_PAGES = array(
-    "uvod" => array("title" => "Úvodní stránka (TPL)")
-);
+//$tplData['title'] = "Úvodní stránka (TPL)";
+//$tplData['stories'] = [
+//    array("id_introduction" => 1, "date" => "2016-11-01 10:53:00", "author" => "A.B.", "title" => "Nadpis", "text" => "abcd")
+//];
+//define("DIRECTORY_VIEWS", "../Views");
+//const WEB_PAGES = array(
+//    "uvod" => array("title" => "Úvodní stránka (TPL)")
+//);
 ////// KONEC: Po zakomponovani do zbytku aplikace bude tato cast odstranena/zakomentovana  //////
 
 //// TODO - vypis sablony
 // urceni globalnich promennych, se kterymi sablona pracuje
-// global $tplData;
+ global $tplData;
 
 // pripojim objekt pro vypis hlavicky a paticky HTML
 // require(DIRECTORY_VIEWS ."/TemplateBasics.class.php");
@@ -36,5 +36,7 @@ const WEB_PAGES = array(
 // muze se hodit: strtotime($d['date'])
 
 // TODO - doplneni sablony
+echo "<h2>$tplData[title]</h2>";
 
+var_dump($tplData['stories']);
 ?>
