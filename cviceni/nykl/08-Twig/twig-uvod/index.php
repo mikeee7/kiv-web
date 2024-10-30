@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	// Twig v.2 stahnout s vyuzitim Composeru nebo z Githubu.
 

@@ -1,0 +1,119 @@
+{# #### Sablona puvodne urcena pro Twig v.1 - cela v jednom souboru #### #}
+
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <title>{{ nadpis | striptags }}</title>
+    <style>
+        body { background-color:lightblue; }
+        #obal { background-color:white; width:600px; margin:0 auto; padding:20px; }
+        h1 { background-color: blue; color: white; text-align: center; }
+        #vypis { border: 1px solid darkred; text-align: center; }
+        .text { text-align: justify; }
+        #paticka { text-align: center; padding: 5px; background-color: darkgray; margin-top: 10px;}
+        img { width: 70px; }
+    </style>
+</head>
+<body>
+<div id="obal">
+    <h1>{{ nadpis | striptags }}</h1>
+
+    {# Zprava pro uzivatele #}
+    {% if prihlaseni!="" %}
+        <div id='vypis'>{{ prihlaseni }}</div>
+    {% endif %}
+    {# KONEC: Zprava pro uzivatele #}
+
+    {# Formular s prihlasenim/odhlasenim #}
+    {% if not uzivatel %}
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Přihlášení uživatele</legend>
+                Login: <input type="text" name="login" maxlength="30">
+                <input type="submit" name="prihlaseni" value="Přihlásit">
+            </fieldset>
+        </form>
+    {% else %}
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Uživatel</legend>
+                <b>Přihlášen uživatel: {{ uzivatel }}</b>
+                <input type="submit" name="odhlaseni" value="Odhlásit"><br>
+                <a href='index.php?web=obchod'>Do obchodu</a>
+                <a href='index.php'>Na úvodní stránku</a>
+            </fieldset>
+        </form>
+    {% endif %}
+    {# KONEC: Formular s prihlasenim/odhlasenim #}
+    <br>
+
+    {# Produkty kosiku #}
+    {% if uzivatel and kos %}
+        <h2>Nákupní košík</h2>
+        <table border='1'>
+            <tr><th>Název</th><th>Cena</th><th>Obr.</th><th>Množství</th><th>Akce</th></tr>
+            {# projdu produkty v kosiku #}
+            {% for pkos in kos %}
+                <form action="index.php?web=obchod" method="post">
+                    <tr style="background-color:{{ cycle(['gold', 'lightblue'], loop.index0) }}">
+                        <td>{{ pkos.nazev | upper }}</td>
+                        <td>{{ pkos.cena }}&nbsp;kč</td>
+                        {% if pkos.obrazek!="" %}
+                            <td><img src='obr/{{ pkos.obrazek }}'></td>
+                        {% else %}
+                            <td><img src='obr/produkt.jpg'></td>
+                        {% endif %}
+                        <td>{{ pkos.ks }}&nbsp;ks</td>
+                        <td>
+                            <input type="hidden" name="produkt" value="{{ pkos.id }}">
+                            <input type="submit" name="odebrat" value="Odeber">
+                        </td>
+                    </tr>
+                </form>
+            {% endfor %}
+        </table>
+    {% endif %}
+    {# KONEC: Produkty kosiku #}
+
+    {# Produkty obchodu #}
+    {% if uzivatel and produkty %}
+        <h2>Produkty v obchodě</h2>
+        <table border='1'>
+            <tr><th>Název</th><th>Cena</th><th>Obr.</th><th>Volba</th><th>Akce</th></tr>
+            {# projdu jednotlive produkty #}
+            {% for produkt in produkty %}
+                <form action="index.php?web=obchod" method="post">
+                    <tr style="background-color:{{ cycle(['antiquewhite', 'burlywood'], loop.index0) }}" >
+                        <td>{{ produkt.nazev | upper }}</td>
+                        <td>{{ produkt.cena }}&nbsp;kč</td>
+                        {% if produkt.obrazek!="" %}
+                            <td><img src='obr/{{ produkt.obrazek }}'></td>
+                        {% else %}
+                            <td><img src='obr/produkt.jpg'></td>
+                        {% endif %}
+                        <td>
+                            <input type="hidden" name="produkt" value="{{ produkt.id }}">
+                            <input type="number" name="mnozstvi" value="1" min="0" max="10" step="1">
+                        </td>
+                        <td>
+                            <input type="submit" name="pridat" value="Přidej do košíku">
+                        </td>
+                    </tr>
+                </form>
+            {% endfor %}
+        </table>
+    {% endif %}
+    {# KONEC: Produkty obchodu #}
+
+    {# zde bude text dokumentu, pokud nejaky bude #}
+    <div class="text">
+        {{ text | raw }}
+    </div>
+
+    <div id="paticka">
+        &copy; 2016
+    </div>
+</div>
+</body>
+</html>

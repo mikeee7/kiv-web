@@ -111,7 +111,7 @@ class MyApplication {
         /////// Vypsani dat do sablony (v1) /////////////
         
         // jen PHP
-        $this->renderInPhpTemplate($tplData);
+//        $this->renderInPhpTemplate($tplData);
 
         // PHP pres Wrapper
         //$this->renderInPhpTemplateWithWrapper($tplData);
@@ -122,7 +122,7 @@ class MyApplication {
 
         // Twig v.2 s sablonou pro v.2
         // TODO - tuto funkci budeme chtit pouzit
-        //$this->renderInTwigV2TemplateV2($tplData, $webKey);
+        $this->renderInTwigV2TemplateV2($tplData, $webKey);
 
         /////// KONEC: Vypsani dat do sablony (v2) /////////////
 
@@ -176,7 +176,27 @@ class MyApplication {
      */
     private function renderInTwigV2TemplateV2(array $data, string $templateKey){
 
-        // TODO - doplnte
+        // nacist twig z vendor component ziskanych s vyuzitim Composer
+        require_once '../composer/vendor/autoload.php';
+
+        $templates = [
+            "uvod" => "uvod.twig",
+            "obchod" => "obchod.twig",
+        ];
+
+
+        // cesta k adresari se sablonami - od tohoto souboru
+        $loader = new \Twig\Loader\FilesystemLoader('sablony-twig');
+        // nacteni prostredi s "nacitacem" sablon (takhle je to bez cache)
+        $twig = new \Twig\Environment($loader, [
+            'debug' => true,
+//            'cache' => "moje_cache"
+        ]);
+
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
+
+        // render vrati kompletni vyplnenou sablonu pro vypis
+        echo $twig->render($templates[$templateKey], $data);
 
     }
 

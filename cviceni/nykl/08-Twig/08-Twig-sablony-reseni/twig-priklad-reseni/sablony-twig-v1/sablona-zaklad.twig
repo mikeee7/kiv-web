@@ -1,0 +1,43 @@
+{# #### Sablona puvodne urcena pro Twig v.1 - zaklad vsech stranek #### #}
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ nadpis | striptags }}</title>
+        <style>
+            body { background-color:lightblue; }
+            #obal { background-color:white; width:600px; margin:0 auto; padding:20px; }
+            h1 { background-color: blue; color: white; text-align: center; }
+            #vypis { border: 1px solid darkred; text-align: center; }
+            .text { text-align: justify; }
+            #paticka { text-align: center; padding: 5px; background-color: darkgray; margin-top: 10px;}
+            img { width: 70px; }
+        </style>
+    </head>
+    <body>
+        <div id="obal">
+            <h1>{{ nadpis | striptags }}</h1>
+            
+            {% block prihlaseni %}
+                {% include("prihlaseni.twig") %}
+            {% endblock %}
+            
+            {% block obsah %}
+                {# zde bude obsah dokumentu, pokud nejaky bude #}
+                Obsah dokumentu.
+            {% endblock %}
+            
+            {% block text %}
+                {# zde bude text dokumentu, pokud nejaky bude #}
+                <div class="text">
+                    {{ text | raw }}
+                </div>
+            {% endblock %}
+            
+            <div id="paticka">
+                &copy; 2016
+            </div>
+        </div>
+    </body>
+</html>

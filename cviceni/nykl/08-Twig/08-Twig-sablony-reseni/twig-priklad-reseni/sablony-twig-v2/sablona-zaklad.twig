@@ -1,0 +1,53 @@
+{# #### Sablona pro Twig v.2 - zaklad vsech stranek #### #}
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ nadpis | striptags }}</title>
+        <style>
+            body { background-color:lightblue; }
+            #obal { background-color:white; width:600px; margin:0 auto; padding:20px; }
+            h1 { background-color: blue; color: white; text-align: center; }
+            #vypis { border: 1px solid darkred; text-align: center; }
+            .text { text-align: justify; }
+            .center { text-align: center; }
+            #paticka { text-align: center; padding: 5px; background-color: darkgray; margin-top: 10px;}
+            img { width: 70px; }
+        </style>
+    </head>
+    <body>
+        <div id="obal">
+            <h1>{{ nadpis | striptags }}</h1>
+
+            {# vypis a sprava prihlaseni uzivatele #}
+            {% block prihlaseni %}
+                {% include("prihlaseni.twig") %}
+            {% endblock %}
+
+            {# vypis obsahu stranky #}
+            {% block obsah %}
+
+                {# vypis kosiku #}
+                {% block nakupniKosik %}
+                    Obsah kosiku.
+                {% endblock %}
+
+                {# vypis produktu obchodu #}
+                {% block produktyObchodu %}
+                    Obsah obchodu.
+                {% endblock %}
+
+                {# text stranky #}
+                {% block text %}
+                    Textový obsah stránky.
+                {% endblock %}
+
+            {% endblock obsah %}
+            
+            <div id="paticka">
+                &copy; 2019
+            </div>
+        </div>
+    </body>
+</html>
