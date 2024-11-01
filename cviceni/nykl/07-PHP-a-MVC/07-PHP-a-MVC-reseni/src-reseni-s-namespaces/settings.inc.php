@@ -8,7 +8,7 @@
 /** Adresa serveru. */
 define("DB_SERVER","localhost"); // https://students.kiv.zcu.cz lze 147.228.63.10, ale musite byt na VPN
 /** Nazev databaze. */
-define("DB_NAME","kivweb");
+define("DB_NAME","mysql");
 /** Uzivatel databaze. */
 define("DB_USER","root");
 /** Heslo uzivatele databaze */
