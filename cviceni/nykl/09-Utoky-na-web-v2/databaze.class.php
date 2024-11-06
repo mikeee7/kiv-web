@@ -107,6 +107,8 @@ class Databaze{
      */
     public function vlozPrispevek($uzivatel, $text){
         // ziskat vysledek dotazu klasicky
+        $uzivatel = htmlspecialchars($uzivatel);
+        $text = htmlspecialchars($text);
         $this->db->query("INSERT INTO ".TABLE_KNIHA." (clovek, text) VALUES ('$uzivatel', '$text');");
 
         /////// START: Osetreni SQL Injection ////////////

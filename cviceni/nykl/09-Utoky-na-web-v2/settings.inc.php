@@ -9,10 +9,10 @@ define("DB_PASSWORD", "db1_vyuka");
 */
 
 // verze pro vlastni PC
-define("DB_HOST", "localhost");
-define("DB_NAME", "my_db");
+define("DB_HOST", "localhost:8889");
+define("DB_NAME", "web-cv09");
 define("DB_USER", "root");
-define("DB_PASSWORD", "");
+define("DB_PASSWORD", "root");
 
 
 //// nazvy tabulek
